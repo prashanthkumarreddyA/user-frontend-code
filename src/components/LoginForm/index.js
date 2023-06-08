@@ -14,7 +14,6 @@ class LoginForm extends Component {
 
   onSubmitSuccess = (jwtToken) => {
     const { history } = this.props;
-
     Cookies.set("jwt_token", jwtToken, { expires: 30 });
     history.replace("/");
   };
@@ -23,20 +22,25 @@ class LoginForm extends Component {
     this.setState({ showSubmitError: true, errorMsg });
   };
 
-  onSubmitForm = async (event) => {
+  submitForm = async (event) => {
     event.preventDefault();
     const { username, password } = this.state;
-    const apiUrl = "http://localhost:3004/login";
     const userDetails = { username, password };
     console.log(userDetails);
+    const url = "http://localhost:3004/login";
     const options = {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
       body: JSON.stringify(userDetails),
     };
-    const response = await fetch(apiUrl, options);
+    const response = await fetch(url, options);
     const data = await response.json();
-    console.log(data);
+
     if (response.ok === true) {
+      console.log(data.jwt_token);
       this.onSubmitSuccess(data.jwt_token);
     } else {
       this.onSubmitFailure(data.error_msg);

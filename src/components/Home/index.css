@@ -14,7 +14,7 @@
   .home-container {
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 50px;
+    padding-top: 96px;
   }
 }
 
@@ -30,12 +30,34 @@
   }
 }
 
+.home-mobile-img {
+  width: 206px;
+}
+
+@media screen and (min-width: 768px) {
+  .home-mobile-img {
+    display: none;
+  }
+}
+
+.home-desktop-img {
+  width: 50%;
+  max-width: 450px;
+  margin-left: 85px;
+}
+
+@media screen and (max-width: 767px) {
+  .home-desktop-img {
+    display: none;
+  }
+}
+
 .home-heading {
+  color: #1e293b;
   font-family: "Roboto";
   font-weight: bold;
-  margin-top: 0px;
-  font-size: 36px;
-  color: #1e293b;
+  font-size: 30px;
+  line-height: 1.2;
   text-align: center;
 }
 
@@ -65,7 +87,6 @@
 }
 
 .shop-now-button {
-  width: 60%;
   font-size: 14px;
   font-weight: 400;
   font-family: "Roboto";
