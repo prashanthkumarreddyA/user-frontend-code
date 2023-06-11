@@ -1,4 +1,4 @@
-.login-form-container {
+.register-form-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,14 +9,24 @@
   margin: auto;
 }
 
+.register-heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  color: blue;
+}
+
 @media screen and (min-width: 992px) {
-  .login-form-container {
-    flex-direction: row;
-    justify-content: space-around;
+  .register-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
-.form-container {
+.register-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,22 +37,22 @@
 }
 
 @media screen and (min-width: 992px) {
-  .form-container {
-    width: 350px;
+  .register-form {
+    width: 340px;
     flex-shrink: 0;
     box-shadow: 0px 8px 40px rgba(7, 7, 7, 0.08);
     padding: 64px 48px 64px 48px;
   }
 }
 
-.input-container {
+.register-input-container {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
   width: 100%;
 }
 
-.input-label {
+.register-input-label {
   margin-bottom: 0px;
   font-family: "Roboto";
   font-weight: bold;
@@ -51,7 +61,7 @@
   color: #475569;
 }
 
-.username-input-field {
+.register-username-input-field {
   font-size: 14px;
   height: 40px;
   border: 1px solid #d7dfe9;
@@ -62,7 +72,7 @@
   padding: 8px 16px 8px 16px;
 }
 
-.password-input-field {
+.register-name-input-field {
   font-size: 14px;
   height: 40px;
   border: 1px solid #d7dfe9;
@@ -73,13 +83,58 @@
   padding: 8px 16px 8px 16px;
 }
 
-.login-button {
+.register-password-input-field {
+  font-size: 14px;
+  height: 40px;
+  border: 1px solid #d7dfe9;
+  background-color: #e2e8f0;
+  color: #64748b;
+  border-radius: 2px;
+  margin-top: 5px;
+  padding: 8px 16px 8px 16px;
+}
+
+.register-gender-input-field {
+  font-size: 14px;
+  height: 40px;
+  border: 1px solid #d7dfe9;
+  background-color: #e2e8f0;
+  color: #64748b;
+  border-radius: 2px;
+  margin-top: 5px;
+  padding: 8px 16px 8px 16px;
+}
+
+.register-location-input-field {
+  font-size: 14px;
+  height: 40px;
+  border: 1px solid #d7dfe9;
+  background-color: #e2e8f0;
+  color: #64748b;
+  border-radius: 2px;
+  margin-top: 5px;
+  padding: 8px 16px 8px 16px;
+}
+
+.register-checkbox-label {
   font-family: "Roboto";
-  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  color: #475569;
+  margin-top: 10px;
+}
+
+.register-checkbox-field {
+  margin-top: 7px;
+}
+
+.register-button {
+  font-family: "Roboto";
+  font-weight: 400;
   font-size: 14px;
   color: #ffffff;
   height: 40px;
-  width: 100%;
+  width: 140px;
   margin-top: 20px;
   margin-bottom: 2px;
   background-color: #0b69ff;
@@ -89,7 +144,7 @@
   outline: none;
 }
 
-.error-message {
+.register-error-message {
   align-self: start;
   font-size: 12px;
   margin-top: 3px;
@@ -98,28 +153,4 @@
   font-size: 12px;
   line-height: 16px;
   color: #ff0b37;
-}
-
-.signup-button {
-  display: inline-block;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  background-color: rgb(60, 221, 236);
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
-}
-
-.signup-button:hover {
-  background-color: #3367d6;
-}
-
-.signup-button:active {
-  background-color: #254aad;
 }

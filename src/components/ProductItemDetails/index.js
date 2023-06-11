@@ -61,10 +61,12 @@ class ProductItemDetails extends Component {
     const response = await fetch(apiUrl, options);
     if (response.ok) {
       const fetchedData = await response.json();
-      const updatedData = this.getFormattedData(fetchedData);
+      const updatedData = this.getFormattedData(fetchedData.product);
+      console.log(fetchedData);
       const updatedSimilarProductsData = fetchedData.similar_products.map(
         (eachSimilarProduct) => this.getFormattedData(eachSimilarProduct)
       );
+
       this.setState({
         productData: updatedData,
         similarProductsData: updatedSimilarProductsData,

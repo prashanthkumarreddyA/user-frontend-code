@@ -11,6 +11,9 @@ class LoginForm extends Component {
     showSubmitError: false,
     errorMsg: "",
   };
+  redirectToRegister = () => {
+    this.props.history.push("/register");
+  };
 
   onSubmitSuccess = (jwtToken) => {
     const { history } = this.props;
@@ -107,6 +110,9 @@ class LoginForm extends Component {
           <div className="input-container">{this.renderPasswordField()}</div>
           <button type="submit" className="login-button">
             Login
+          </button>
+          <button className="signup-button" onClick={this.redirectToRegister}>
+            Sign Up
           </button>
           {showSubmitError && <p className="error-message">*{errorMsg}</p>}
         </form>
