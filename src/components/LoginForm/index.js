@@ -30,7 +30,7 @@ class LoginForm extends Component {
     const { username, password } = this.state;
     const userDetails = { username, password };
     console.log(userDetails);
-    const url = "http://localhost:3004/login";
+    const url = "https://greenmart-backend.onrender.com/login";
     const options = {
       method: "POST",
       headers: {

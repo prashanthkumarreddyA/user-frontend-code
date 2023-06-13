@@ -21,20 +21,23 @@ class RegisterForm extends Component {
     try {
       const { username, name, password, gender, location, prime } = this.state;
 
-      const response = await fetch("http://localhost:3004/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username,
-          name,
-          password,
-          gender,
-          location,
-          prime,
-        }),
-      });
+      const response = await fetch(
+        "https://greenmart-backend.onrender.com/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username,
+            name,
+            password,
+            gender,
+            location,
+            prime,
+          }),
+        }
+      );
 
       if (response.ok) {
         this.setState({ errorMessage: "", redirectToLogin: true });

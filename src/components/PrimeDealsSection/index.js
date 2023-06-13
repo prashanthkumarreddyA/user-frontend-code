@@ -29,7 +29,7 @@ class PrimeDealsSection extends Component {
 
     const jwtToken = Cookies.get("jwt_token");
 
-    const apiUrl = "http://localhost:3004/prime-deals";
+    const apiUrl = "https://greenmart-backend.onrender.com/prime-deals";
     const options = {
       headers: {
         Authorization: `Bearer ${jwtToken}`,
