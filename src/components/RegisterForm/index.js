@@ -22,7 +22,7 @@ class RegisterForm extends Component {
       const { username, name, password, gender, location, prime } = this.state;
 
       const response = await fetch(
-        "http://localhost:3004//register",
+        "http://localhost:3004/register",
         {
           method: "POST",
           headers: {
