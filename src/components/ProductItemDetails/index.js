@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
 import Loader from "react-loader-spinner";
@@ -22,6 +22,7 @@ class ProductItemDetails extends Component {
     similarProductsData: [],
     apiStatus: apiStatusConstants.initial,
     quantity: 1,
+    success_msg: "",
   };
 
   componentDidMount() {
@@ -128,7 +129,9 @@ class ProductItemDetails extends Component {
 
     const response = await fetch(apiUrl, options);
     const data = await response.json();
-    console.log(data);
+    if (response.ok) {
+      this.setState({ success_msg: data.success_msg });
+    }
   };
 
   renderProductDetailsView = () => {
@@ -198,6 +201,9 @@ class ProductItemDetails extends Component {
             >
               ADD TO CART
             </button>
+            {this.state.success_msg && (
+              <p className="success-msg">{this.state.success_msg}</p>
+            )}
           </div>
         </div>
         <h1 className="similar-products-heading">Similar Products</h1>

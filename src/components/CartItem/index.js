@@ -4,9 +4,8 @@ import Cookies from "js-cookie";
 import "./index.css";
 
 const CartItem = (props) => {
-  const { cartItemDetails } = props;
+  const { cartItemDetails,getCartList } = props;
   const { id, title, brand, quantity, price, imageUrl } = cartItemDetails;
-  console.log(quantity,price)
   const totalPrice = price * quantity;
 
   const onRemoveCartItem = async (id) => {
@@ -19,8 +18,9 @@ const CartItem = (props) => {
       method: "DELETE",
     };
     const response = await fetch(apiUrl, options);
-    console.log(response)
-    // Handle response or any necessary actions after removing cart item
+    if (response.ok) {
+      getCartList()
+    }
   };
 
   const onClickIncrement = async (id) => {
@@ -33,7 +33,9 @@ const CartItem = (props) => {
       method: "PUT",
     };
     const response = await fetch(apiUrl, options);
-    console.log(response)
+    if (response.ok) {
+      getCartList()
+    }
     // Handle response or any necessary actions after incrementing cart item quantity
   };
 
@@ -47,8 +49,9 @@ const CartItem = (props) => {
       method: "PUT",
     };
     const response = await fetch(apiUrl, options);
-    console.log(response)
-    // Handle response or any necessary actions after decrementing cart item quantity
+    if (response.ok) {
+      getCartList()
+    }
   };
 
 

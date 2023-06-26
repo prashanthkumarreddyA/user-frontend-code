@@ -48,7 +48,6 @@ class Cart extends Component {
     const response = await fetch(apiUrl, options);
     const data = await response.json();
     const cartList = data.cartItems;
-    console.log(cartList)
     this.setState({ cartList });
   };
 
@@ -57,7 +56,7 @@ class Cart extends Component {
 
     return (
       <>
-        <Header />
+        <Header  />
         <div className="cart-container">
           {cartList.length === 0 ? (
             <EmptyCartView />
@@ -71,7 +70,7 @@ class Cart extends Component {
               >
                 Remove All
               </button>
-              <CartListView cartList={cartList} />
+              <CartListView cartList={cartList} getCartList={this.getCartList} />
               <CartSummary cartList={cartList} />
             </div>
           )}
